@@ -9,6 +9,7 @@ export function CartProvider({ children }) {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  // Save cart whenever it changes
   useEffect(() => {
     localStorage.setItem(
       "devClothingCart",
@@ -16,6 +17,7 @@ export function CartProvider({ children }) {
     );
   }, [cartItems]);
 
+  // Add product to cart
   const addToCart = (product, size, color) => {
     const existingItem = cartItems.find(
       (item) =>
@@ -30,7 +32,10 @@ export function CartProvider({ children }) {
           item.product.id === product.id &&
           item.size === size &&
           item.color === color
-            ? { ...item, quantity: item.quantity + 1 }
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+              }
             : item
         )
       );
@@ -47,18 +52,23 @@ export function CartProvider({ children }) {
     }
   };
 
+  // Increase quantity
   const increaseQuantity = (productId, size, color) => {
     setCartItems(
       cartItems.map((item) =>
         item.product.id === productId &&
         item.size === size &&
         item.color === color
-          ? { ...item, quantity: item.quantity + 1 }
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
           : item
       )
     );
   };
 
+  // Decrease quantity
   const decreaseQuantity = (productId, size, color) => {
     setCartItems(
       cartItems
@@ -66,13 +76,17 @@ export function CartProvider({ children }) {
           item.product.id === productId &&
           item.size === size &&
           item.color === color
-            ? { ...item, quantity: item.quantity - 1 }
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+              }
             : item
         )
         .filter((item) => item.quantity > 0)
     );
   };
 
+  // Remove product completely
   const removeFromCart = (productId, size, color) => {
     setCartItems(
       cartItems.filter(
@@ -86,6 +100,11 @@ export function CartProvider({ children }) {
     );
   };
 
+  // Clear entire cart after successful order
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -94,6 +113,7 @@ export function CartProvider({ children }) {
         increaseQuantity,
         decreaseQuantity,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}
