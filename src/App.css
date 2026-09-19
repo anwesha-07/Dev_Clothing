@@ -1904,3 +1904,77 @@
   }
 
 }
+
+/* =========================
+   CATEGORY PAGE DETAILS
+========================= */
+
+.category-description {
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: #666;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.category-result-count {
+  margin: 25px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+
+/* CATEGORY FILTER BUTTONS */
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 35px 0 20px;
+}
+
+.category-filters button {
+  padding: 10px 18px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.2s ease;
+}
+
+.category-filters button:hover {
+  border-color: #111;
+}
+
+.category-filters .active-filter {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+
+/* CATEGORY MOBILE */
+
+@media (max-width: 768px) {
+
+  .category-description {
+    font-size: 14px;
+  }
+
+  .category-filters {
+    justify-content: flex-start;
+    margin-top: 25px;
+  }
+
+  .category-filters button {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+
+  .category-result-count {
+    margin: 20px 0;
+  }
+
+}
