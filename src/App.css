@@ -1151,3 +1151,144 @@
   }
 
 }
+
+
+/* =========================
+   SEARCH PAGE
+========================= */
+
+.search-page {
+  min-height: 70vh;
+  padding: 80px 50px;
+  background-color: #f8f8f8;
+}
+
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-page .section-heading {
+  margin-bottom: 40px;
+}
+
+.search-page .section-heading p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #777777;
+}
+
+.search-page .section-heading h1 {
+  font-size: 42px;
+  color: #111111;
+}
+
+/* Search box */
+
+.search-box {
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 17px 20px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #111111;
+}
+
+.search-box input::placeholder {
+  color: #999999;
+}
+
+/* Search result text */
+
+.search-result-text {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* No results */
+
+.no-results {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 60px 30px;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #eeeeee;
+}
+
+.no-results h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  color: #111111;
+}
+
+.no-results p {
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Search results */
+
+.search-container .products-grid {
+  margin-top: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .search-page {
+    padding: 60px 20px;
+  }
+
+  .search-page .section-heading h1 {
+    font-size: 34px;
+  }
+
+  .search-box {
+    margin-bottom: 25px;
+  }
+
+  .search-box input {
+    padding: 15px;
+    font-size: 15px;
+  }
+}
+
+
+/* Search clear button */
+
+.search-box {
+  position: relative;
+}
+
+.clear-search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 14px;
+  border: none;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.clear-search-button:hover {
+  background-color: #333333;
+}
