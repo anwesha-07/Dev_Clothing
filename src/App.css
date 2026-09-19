@@ -1441,3 +1441,95 @@
   line-height: 1.5;
   color: #777777;
 }
+
+/* =========================
+   WISHLIST BUTTON
+========================= */
+
+.wishlist-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px 20px;
+  background: white;
+  color: #111111;
+  border: 1px solid #111111;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.wishlist-button:hover {
+  background: #111111;
+  color: white;
+}
+
+/* =========================
+   WISHLIST PAGE
+========================= */
+
+.wishlist-page {
+  min-height: 70vh;
+  padding: 90px 50px;
+}
+
+.wishlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wishlist-count {
+  margin-top: -20px;
+  margin-bottom: 35px;
+  font-size: 14px;
+  color: #777777;
+}
+
+/* EMPTY WISHLIST */
+
+.empty-wishlist {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.wishlist-empty-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.wishlist-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #777777;
+  margin-bottom: 10px;
+}
+
+.empty-wishlist h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.empty-wishlist p:not(.wishlist-label) {
+  max-width: 500px;
+  color: #777777;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+
+  .wishlist-page {
+    padding: 60px 20px;
+  }
+
+  .empty-wishlist h1 {
+    font-size: 28px;
+  }
+
+}
