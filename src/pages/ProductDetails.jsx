@@ -16,6 +16,7 @@ function ProductDetails() {
   );
 
   const [added, setAdded] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const [selectedColor, setSelectedColor] = useState(
     product?.colors[0] || ""
@@ -88,15 +89,66 @@ function ProductDetails() {
             </div>
           </div>
 
+          <div className="product-option quantity-option">
+
+  <h3>Quantity</h3>
+
+  <div className="product-quantity-controls">
+
+    <button
+      onClick={() =>
+        setQuantity((current) =>
+          Math.max(1, current - 1)
+        )
+      }
+    >
+      −
+    </button>
+
+    <span>{quantity}</span>
+
+    <button
+      onClick={() =>
+        setQuantity((current) =>
+          Math.min(product.stock, current + 1)
+        )
+      }
+    >
+      +
+    </button>
+
+  </div>
+
+</div>
+
           <button
   className="add-to-cart-button"
   onClick={() => {
-    addToCart(product, selectedSize, selectedColor);
+    addToCart(
+  product,
+  selectedSize,
+  selectedColor,
+  quantity
+);
     setAdded(true);
   }}
 >
   {added ? "Added to Cart ✓" : "Add to Cart"}
 </button>
+
+<div className="product-policy">
+
+  <div className="policy-item">
+    <strong>Exchange Available</strong>
+    <span>Eligible products can be exchanged according to our exchange policy.</span>
+  </div>
+
+  <div className="policy-item">
+    <strong>No Returns</strong>
+    <span>We currently do not offer returns.</span>
+  </div>
+
+</div>
 
         </div>
 

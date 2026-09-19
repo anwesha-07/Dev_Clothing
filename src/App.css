@@ -1292,3 +1292,152 @@
 .clear-search-button:hover {
   background-color: #333333;
 }
+
+/* =========================
+   PRODUCT QUANTITY
+========================= */
+
+.quantity-option {
+  margin-top: 10px;
+}
+
+.product-quantity-controls {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.product-quantity-controls button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #111111;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.product-quantity-controls button:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.product-quantity-controls span {
+  width: 50px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =========================
+   PRODUCT DETAILS IMPROVEMENTS
+========================= */
+
+.product-details-page {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.product-details-info {
+  padding: 10px 0;
+}
+
+.product-details-info h1 {
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.product-details-price {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.product-details-stock {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 7px 12px;
+  background-color: #eeeeee;
+  color: #444444;
+  font-size: 13px;
+}
+
+.product-option {
+  margin-bottom: 28px;
+}
+
+.product-option h3 {
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Product image */
+
+.product-details-image {
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.product-details-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.product-details-image:hover img {
+  transform: scale(1.02);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .product-details-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .product-details-info h1 {
+    font-size: 32px;
+  }
+
+  .product-details-image img {
+    height: 450px;
+  }
+
+}
+
+/* =========================
+   PRODUCT POLICY
+========================= */
+
+.product-policy {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #dddddd;
+}
+
+.policy-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+
+.policy-item strong {
+  font-size: 14px;
+  color: #111111;
+}
+
+.policy-item span {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #777777;
+}

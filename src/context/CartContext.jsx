@@ -18,7 +18,7 @@ export function CartProvider({ children }) {
   }, [cartItems]);
 
   // Add product to cart
-  const addToCart = (product, size, color) => {
+  const addToCart = (product, size, color, quantity = 1) => {
     const existingItem = cartItems.find(
       (item) =>
         item.product.id === product.id &&
@@ -34,7 +34,7 @@ export function CartProvider({ children }) {
           item.color === color
             ? {
                 ...item,
-                quantity: item.quantity + 1,
+                quantity: item.quantity + quantity,
               }
             : item
         )
@@ -46,7 +46,7 @@ export function CartProvider({ children }) {
           product,
           size,
           color,
-          quantity: 1,
+          quantity: quantity,
         },
       ]);
     }
