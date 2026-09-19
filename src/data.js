@@ -40,6 +40,7 @@ const products = [
     sizes: ["M", "L", "XL"],
     colors: ["Blue"],
     stock: 8,
+    badge: "Sale",
   },
 
   {
@@ -129,6 +130,7 @@ const products = [
     sizes: ["28", "30", "32", "34"],
     colors: ["Blue"],
     stock: 13,
+    badge: "Sale",
   },
 
   {
@@ -165,6 +167,7 @@ const products = [
   sizes: ["S", "M", "L"],
   colors: ["Blue"],
   stock: 7,
+  badge: "Sale",
 },
 ];
 
