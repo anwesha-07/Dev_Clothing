@@ -2282,3 +2282,137 @@
   }
 
 }
+
+
+/* =========================
+   NAVBAR ACTIONS
+========================= */
+
+.navbar-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.navbar-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.navbar-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+.navbar-menu-button {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    position: relative;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1000;
+  }
+
+  .navbar-links.mobile-menu-open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+
+  .navbar-menu-button {
+    display: block;
+  }
+
+  .navbar-actions {
+    gap: 16px;
+  }
+
+}
+
+/* NAVBAR SPACING */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 50px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: #111;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #777;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

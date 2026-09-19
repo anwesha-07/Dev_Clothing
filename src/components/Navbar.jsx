@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const { cartItems } = useCart();
   const { wishlist } = useWishlist();
 
@@ -13,62 +16,94 @@ function Navbar() {
 
   const wishlistCount = wishlist.length;
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
 
       {/* LOGO */}
 
       <div className="navbar-logo">
-        <Link to="/">
+        <Link to="/" onClick={closeMenu}>
           DEV CLOTHING
         </Link>
       </div>
 
       {/* NAVIGATION */}
 
-      <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/men">Men</Link>
-        <Link to="/women">Women</Link>
-        <Link to="/shop">Shop</Link>
+      <div
+        className={`navbar-links ${
+          menuOpen ? "mobile-menu-open" : ""
+        }`}
+      >
+        <Link to="/" onClick={closeMenu}>
+          Home
+        </Link>
+
+        <Link to="/men" onClick={closeMenu}>
+          Men
+        </Link>
+
+        <Link to="/women" onClick={closeMenu}>
+          Women
+        </Link>
+
+        <Link to="/shop" onClick={closeMenu}>
+          Shop
+        </Link>
       </div>
 
       {/* ACTIONS */}
 
       <div className="navbar-actions">
 
-        {/* SEARCH */}
-
         <Link
           to="/search"
+          className="navbar-action"
           aria-label="Search"
         >
-          🔍
+          <span className="navbar-icon">⌕</span>
         </Link>
-
-        {/* WISHLIST */}
 
         <Link
           to="/wishlist"
+          className="navbar-action"
           aria-label="Wishlist"
         >
-          ♡
+          <span className="navbar-icon">♡</span>
+
           {wishlistCount > 0 && (
-            <span>{wishlistCount}</span>
+            <span className="navbar-count">
+              {wishlistCount}
+            </span>
           )}
         </Link>
-
-        {/* CART */}
 
         <Link
           to="/cart"
+          className="navbar-action"
           aria-label="Shopping Cart"
         >
-          🛍️
+          <span className="navbar-icon">🛍</span>
+
           {cartCount > 0 && (
-            <span>{cartCount}</span>
+            <span className="navbar-count">
+              {cartCount}
+            </span>
           )}
         </Link>
+
+        {/* MOBILE MENU BUTTON */}
+
+        <button
+          className="navbar-menu-button"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
       </div>
 
