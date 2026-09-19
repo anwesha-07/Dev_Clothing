@@ -11,6 +11,8 @@ import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import ExchangePolicy from "./pages/ExchangePolicy";
+import Contact from "./pages/Contact";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -53,6 +55,16 @@ function App() {
               path="/order-success"
               element={<OrderSuccess />}
             />
+            <Route
+              path="/exchange-policy"
+              element={<ExchangePolicy />}
+            />
+
+            <Route
+  path="/contact"
+  element={<Contact />}
+/>
+
           </Routes>
 
           <Footer />

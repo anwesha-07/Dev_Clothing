@@ -1630,3 +1630,277 @@
     width: 100%;
   }
 }
+
+
+/* =========================
+   POLICY PAGE
+========================= */
+
+.policy-page {
+  padding: 70px 50px;
+  min-height: 70vh;
+}
+
+.policy-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.policy-content {
+  margin-top: 50px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  padding: 45px;
+}
+
+.policy-section {
+  margin-bottom: 40px;
+}
+
+.policy-section:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section h2 {
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.policy-section p {
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.policy-section ul {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.policy-section li {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.policy-section li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* POLICY MOBILE */
+
+@media (max-width: 768px) {
+
+  .policy-page {
+    padding: 50px 20px;
+  }
+
+  .policy-content {
+    padding: 28px 22px;
+    margin-top: 35px;
+  }
+
+  .policy-section {
+    margin-bottom: 32px;
+  }
+
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page {
+  padding: 70px 50px;
+  min-height: 70vh;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  max-width: 700px;
+  margin: 25px auto 0;
+  text-align: center;
+}
+
+.contact-intro p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+
+/* CONTACT LAYOUT */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 55px;
+}
+
+
+/* SUPPORT SECTION */
+
+.contact-support h2 {
+  margin-bottom: 25px;
+}
+
+.support-card {
+  border: 1px solid #e5e5e5;
+  padding: 25px;
+  margin-bottom: 18px;
+  background: #ffffff;
+}
+
+.support-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.support-card p {
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* CONTACT FORM */
+
+.contact-form {
+  border: 1px solid #e5e5e5;
+  padding: 35px;
+  background: #ffffff;
+}
+
+.contact-form h2 {
+  margin-bottom: 25px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #111;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-submit-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.contact-submit-button:hover {
+  background: #333;
+}
+
+
+/* CONTACT NOTE */
+
+.contact-note {
+  margin-top: 50px;
+  padding: 30px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.contact-note h2 {
+  margin-bottom: 10px;
+}
+
+.contact-note p {
+  color: #555;
+  line-height: 1.7;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   CONTACT MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .contact-page {
+    padding: 50px 20px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+  .contact-intro {
+    margin-top: 20px;
+  }
+
+  .contact-note {
+    margin-top: 35px;
+    padding: 25px 20px;
+  }
+
+}
+
+/* =========================
+   POLICY & CONTACT MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .policy-page,
+  .contact-page {
+    padding: 50px 20px;
+  }
+
+  .policy-content {
+    padding: 25px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+}
