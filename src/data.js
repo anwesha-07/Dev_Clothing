@@ -27,6 +27,7 @@ const products = [
     sizes: ["S", "M", "L", "XL"],
     colors: ["Black"],
     stock: 10,
+    badge: "New",
   },
 
   {

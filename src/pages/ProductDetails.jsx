@@ -28,6 +28,7 @@ function ProductDetails() {
   );
 
   const [added, setAdded] = useState(false);
+  const [stockMessage, setStockMessage] = useState("");
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
@@ -41,6 +42,25 @@ function ProductDetails() {
       </main>
     );
   }
+
+  const handleAddToCart = () => {
+    const success = addToCart(
+      product,
+      selectedSize,
+      selectedColor,
+      quantity
+    );
+
+    if (success) {
+      setAdded(true);
+      setStockMessage("");
+    } else {
+      setAdded(false);
+      setStockMessage(
+        `Only ${product.stock} items available.`
+      );
+    }
+  };
 
   return (
     <main className="product-details-page">
@@ -162,21 +182,18 @@ function ProductDetails() {
 
           <button
             className="add-to-cart-button"
-            onClick={() => {
-              addToCart(
-                product,
-                selectedSize,
-                selectedColor,
-                quantity
-              );
-
-              setAdded(true);
-            }}
+            onClick={handleAddToCart}
           >
             {added
               ? "Added to Cart ✓"
               : "Add to Cart"}
           </button>
+
+          {stockMessage && (
+            <p className="stock-error-message">
+              {stockMessage}
+            </p>
+          )}
 
           {/* WISHLIST */}
 
