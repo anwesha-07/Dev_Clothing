@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
+import ProductCard from "../components/ProductCard";
 import products from "../data";
 
 function ProductDetails() {
   const { id } = useParams();
-
   const { addToCart } = useCart();
 
   const {
@@ -30,6 +30,18 @@ function ProductDetails() {
   const [added, setAdded] = useState(false);
   const [stockMessage, setStockMessage] = useState("");
   const [quantity, setQuantity] = useState(1);
+
+  /*
+    Reset product-specific state whenever
+    the product ID changes.
+  */
+  useEffect(() => {
+    setSelectedSize(product?.sizes[0] || "");
+    setSelectedColor(product?.colors[0] || "");
+    setQuantity(1);
+    setAdded(false);
+    setStockMessage("");
+  }, [id]);
 
   if (!product) {
     return (
@@ -62,8 +74,19 @@ function ProductDetails() {
     }
   };
 
+  const relatedProducts = products
+    .filter(
+      (item) =>
+        item.category === product.category &&
+        item.id !== product.id
+    )
+    .slice(0, 4);
+
   return (
     <main className="product-details-page">
+
+      {/* PRODUCT DETAILS */}
+
       <div className="product-details">
 
         {/* PRODUCT IMAGE */}
@@ -89,6 +112,14 @@ function ProductDetails() {
             ₹{product.price}
           </p>
 
+          {/* DESCRIPTION */}
+
+          <p className="product-details-description">
+            {product.description}
+          </p>
+
+          {/* STOCK */}
+
           <p className="product-details-stock">
             {product.stock} items available
           </p>
@@ -96,7 +127,10 @@ function ProductDetails() {
           {/* SIZE */}
 
           <div className="product-option">
-            <h3>Size: {selectedSize}</h3>
+
+            <h3>
+              Size: {selectedSize}
+            </h3>
 
             <div className="option-buttons">
 
@@ -108,19 +142,25 @@ function ProductDetails() {
                       ? "selected-option"
                       : ""
                   }
-                  onClick={() => setSelectedSize(size)}
+                  onClick={() =>
+                    setSelectedSize(size)
+                  }
                 >
                   {size}
                 </button>
               ))}
 
             </div>
+
           </div>
 
           {/* COLOR */}
 
           <div className="product-option">
-            <h3>Color: {selectedColor}</h3>
+
+            <h3>
+              Color: {selectedColor}
+            </h3>
 
             <div className="option-buttons">
 
@@ -132,13 +172,16 @@ function ProductDetails() {
                       ? "selected-option"
                       : ""
                   }
-                  onClick={() => setSelectedColor(color)}
+                  onClick={() =>
+                    setSelectedColor(color)
+                  }
                 >
                   {color}
                 </button>
               ))}
 
             </div>
+
           </div>
 
           {/* QUANTITY */}
@@ -183,11 +226,16 @@ function ProductDetails() {
           <button
             className="add-to-cart-button"
             onClick={handleAddToCart}
+            disabled={product.stock === 0}
           >
-            {added
+            {product.stock === 0
+              ? "Out of Stock"
+              : added
               ? "Added to Cart ✓"
               : "Add to Cart"}
           </button>
+
+          {/* STOCK ERROR */}
 
           {stockMessage && (
             <p className="stock-error-message">
@@ -217,20 +265,68 @@ function ProductDetails() {
           <div className="product-policy">
 
             <div className="policy-item">
-              <strong>Exchange Available</strong>
+
+              <strong>
+                Exchange Available
+              </strong>
 
               <span>
                 Eligible products can be exchanged
                 according to our exchange policy.
               </span>
+
             </div>
 
             <div className="policy-item">
-              <strong>No Returns</strong>
+
+              <strong>
+                No Returns
+              </strong>
 
               <span>
                 We currently do not offer returns.
               </span>
+
+            </div>
+
+          </div>
+
+          {/* PRODUCT DETAILS */}
+
+          <div className="product-details-extra">
+
+            <h3>Product Details</h3>
+
+            <div className="details-list">
+
+              <div className="details-row">
+                <span>Category</span>
+                <strong>
+                  {product.category}
+                </strong>
+              </div>
+
+              <div className="details-row">
+                <span>Type</span>
+                <strong>
+                  {product.type}
+                </strong>
+              </div>
+
+              <div className="details-row">
+                <span>Available Sizes</span>
+                <strong>
+                  {product.sizes.join(", ")}
+                </strong>
+              </div>
+
+              <div className="details-row">
+                <span>Available Colors</span>
+                <strong>
+                  {product.colors.join(", ")}
+                </strong>
+              </div>
+
             </div>
 
           </div>
@@ -238,6 +334,38 @@ function ProductDetails() {
         </div>
 
       </div>
+
+      {/* YOU MAY ALSO LIKE */}
+
+      {relatedProducts.length > 0 && (
+        <section className="related-products">
+
+          <div className="section-heading">
+
+            <p>
+              COMPLETE YOUR LOOK
+            </p>
+
+            <h2>
+              You May Also Like
+            </h2>
+
+          </div>
+
+          <div className="products-grid">
+
+            {relatedProducts.map((item) => (
+              <ProductCard
+                key={item.id}
+                product={item}
+              />
+            ))}
+
+          </div>
+
+        </section>
+      )}
+
     </main>
   );
 }

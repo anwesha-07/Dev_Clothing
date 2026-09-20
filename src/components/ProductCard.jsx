@@ -3,7 +3,6 @@ import { useWishlist } from "../context/WishlistContext";
 
 function ProductCard({ product }) {
   const {
-    wishlist,
     addToWishlist,
     removeFromWishlist,
     isInWishlist,
@@ -11,7 +10,9 @@ function ProductCard({ product }) {
 
   const isWishlisted = isInWishlist(product.id);
 
-  const handleWishlist = () => {
+  const handleWishlist = (event) => {
+    event.preventDefault();
+
     if (isWishlisted) {
       removeFromWishlist(product.id);
     } else {
@@ -21,6 +22,8 @@ function ProductCard({ product }) {
 
   return (
     <div className="product-card">
+
+      {/* Product Image */}
 
       <div className="product-image-container">
 
@@ -32,23 +35,33 @@ function ProductCard({ product }) {
           />
         </Link>
 
+        {/* Product Badge */}
+
         {product.badge && (
           <span className="product-badge">
             {product.badge}
           </span>
         )}
 
+        {/* Wishlist Button */}
+
         <button
           className={`product-wishlist ${
             isWishlisted ? "wishlisted" : ""
           }`}
           onClick={handleWishlist}
-          aria-label="Add to wishlist"
+          aria-label={
+            isWishlisted
+              ? "Remove from wishlist"
+              : "Add to wishlist"
+          }
         >
           {isWishlisted ? "♥" : "♡"}
         </button>
 
       </div>
+
+      {/* Product Information */}
 
       <div className="product-info">
 
@@ -67,21 +80,25 @@ function ProductCard({ product }) {
           ₹{product.price}
         </p>
 
+        {/* Stock Status */}
+
         <div className="product-stock">
-  {product.stock === 0 ? (
-    <span className="out-of-stock">
-      Out of Stock
-    </span>
-  ) : product.stock <= 5 ? (
-    <span className="low-stock">
-      Only {product.stock} left
-    </span>
-  ) : (
-    <span className="in-stock">
-      In Stock
-    </span>
-  )}
-</div>
+
+          {product.stock === 0 ? (
+            <span className="out-of-stock">
+              Out of Stock
+            </span>
+          ) : product.stock <= 5 ? (
+            <span className="low-stock">
+              Only {product.stock} left
+            </span>
+          ) : (
+            <span className="in-stock">
+              In Stock
+            </span>
+          )}
+
+        </div>
 
       </div>
 

@@ -23,6 +23,8 @@ const products = [
     category: "Men",
     type: "Shirts",
     price: 999,
+    description:
+    "A versatile black shirt designed for a clean and effortless everyday look.",
     image: menShirt,
     sizes: ["S", "M", "L", "XL"],
     colors: ["Black"],
@@ -36,6 +38,8 @@ const products = [
     category: "Men",
     type: "Jackets",
     price: 1499,
+    description:
+     "A timeless denim jacket that adds a relaxed and stylish layer to everyday outfits.",
     image: menJacket,
     sizes: ["M", "L", "XL"],
     colors: ["Blue"],
@@ -49,6 +53,8 @@ const products = [
     category: "Men",
     type: "T-Shirts",
     price: 699,
+    description:
+  "A comfortable white T-shirt with a clean design, perfect for everyday wear.",
     image: menTshirt,
     sizes: ["S", "M", "L", "XL"],
     colors: ["White"],
@@ -61,6 +67,8 @@ const products = [
     category: "Men",
     type: "Jeans",
     price: 1399,
+    description:
+  "Classic blue jeans designed for comfortable everyday styling and easy pairing.",
     image: menJeans,
     sizes: ["30", "32", "34", "36"],
     colors: ["Blue"],
@@ -73,6 +81,8 @@ const products = [
     category: "Men",
     type: "Kurtas",
     price: 1199,
+     description:
+  "A comfortable cotton kurta with a traditional look, suitable for casual and festive occasions.",
     image: menKurta,
     sizes: ["M", "L", "XL"],
     colors: ["White"],
@@ -85,6 +95,8 @@ const products = [
     category: "Men",
     type: "Hoodies",
     price: 1299,
+    description:
+  "A cozy everyday hoodie designed for a relaxed fit and comfortable casual wear.",
     image: menHoodie,
     sizes: ["M", "L", "XL"],
     colors: ["Black"],
@@ -102,6 +114,8 @@ const products = [
     category: "Women",
     type: "Dresses",
     price: 1299,
+    description:
+  "An elegant dress designed for effortless styling and a polished look.",
     image: womenDress,
     sizes: ["S", "M", "L"],
     colors: ["Black"],
@@ -114,6 +128,8 @@ const products = [
     category: "Women",
     type: "Tops",
     price: 799,
+    description:
+  "A versatile casual top that pairs easily with jeans, skirts, and everyday outfits.",
     image: womenTop,
     sizes: ["S", "M", "L", "XL"],
     colors: ["White"],
@@ -126,6 +142,8 @@ const products = [
     category: "Women",
     type: "Jeans",
     price: 1399,
+    description:
+  "Classic women's jeans designed for comfortable everyday wear and easy styling.",
     image: womenJeans,
     sizes: ["28", "30", "32", "34"],
     colors: ["Blue"],
@@ -139,6 +157,8 @@ const products = [
     category: "Women",
     type: "Kurtis",
     price: 999,
+    description:
+  "A stylish printed kurti designed for comfortable and effortless everyday wear.",
     image: womenKurti,
     sizes: ["S", "M", "L", "XL"],
     colors: ["Pink"],
@@ -151,6 +171,8 @@ const products = [
     category: "Women",
     type: "Skirts",
     price: 899,
+    description:
+  "A versatile skirt that brings a simple and elegant touch to casual outfits.",
     image: womenSkirt,
     sizes: ["S", "M", "L"],
     colors: ["Black"],
@@ -163,6 +185,8 @@ const products = [
   category: "Women",
   type: "Co-ords",
   price: 1599,
+  description:
+  "A coordinated outfit designed for an effortless, stylish, and comfortable everyday look.",
   image: womenCoords,
   sizes: ["S", "M", "L"],
   colors: ["Blue"],
