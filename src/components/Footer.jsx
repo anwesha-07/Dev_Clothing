@@ -20,11 +20,26 @@ function Footer() {
           <Link to="/shop">All Products</Link>
         </div>
 
-        <div className="footer-links">
-          <h3>HELP</h3>
-          <Link to="/exchange-policy">Exchange Policy</Link>
-          <Link to="/contact">Contact Us</Link>
-        </div>
+       <div className="footer-links">
+  <h3>HELP</h3>
+
+
+  <Link to="/account">
+    My Account
+  </Link>
+
+  <Link to="/orders">
+    My Orders
+  </Link>
+
+  <Link to="/exchange-policy">
+    Exchange Policy
+  </Link>
+
+  <Link to="/contact">
+    Contact Us
+  </Link>
+</div>
 
       </div>
 

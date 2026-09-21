@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -53,7 +54,11 @@ function Navbar() {
         <Link to="/shop" onClick={closeMenu}>
           Shop
         </Link>
+
+        <Link to="/orders">Orders</Link>
+        <Link to="/account">Account</Link>
       </div>
+      
 
       {/* ACTIONS */}
 

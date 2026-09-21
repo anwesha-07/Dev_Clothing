@@ -19,6 +19,8 @@ import Footer from "./components/Footer";
 
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
+import Orders from "./pages/Orders";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -56,6 +58,10 @@ function App() {
               element={<OrderSuccess />}
             />
             <Route
+  path="/orders"
+  element={<Orders />}
+/>
+            <Route
               path="/exchange-policy"
               element={<ExchangePolicy />}
             />
@@ -64,7 +70,10 @@ function App() {
   path="/contact"
   element={<Contact />}
 />
-
+            <Route
+  path="/account"
+  element={<Account />}
+/>
           </Routes>
 
           <Footer />

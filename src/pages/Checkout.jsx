@@ -97,6 +97,29 @@ const orderId =
   "DEV-" +
   Date.now().toString().slice(-6);
 
+const newOrder = {
+  orderId,
+  items: cartItems,
+  total: cartTotal,
+  paymentMethod: "Cash on Delivery",
+  status: "Confirmed",
+  customer,
+  date: new Date().toLocaleString(),
+};
+
+const existingOrders =
+  JSON.parse(
+    localStorage.getItem("devClothingOrders")
+  ) || [];
+
+localStorage.setItem(
+  "devClothingOrders",
+  JSON.stringify([
+    newOrder,
+    ...existingOrders,
+  ])
+);
+
 localStorage.setItem(
   "devClothingOrderId",
   orderId
