@@ -91,12 +91,20 @@ function Checkout() {
       );
       return;
     }
+setError("");
 
-    setError("");
+const orderId =
+  "DEV-" +
+  Date.now().toString().slice(-6);
 
-    clearCart();
+localStorage.setItem(
+  "devClothingOrderId",
+  orderId
+);
 
-    window.location.href = "/order-success";
+clearCart();
+
+window.location.href = "/order-success";
   };
 
   if (cartItems.length === 0) {
