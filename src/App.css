@@ -2486,3 +2486,154 @@
   }
 
 }
+
+/* CHECKOUT ITEM IMPROVEMENTS */
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.checkout-item-image {
+  width: 75px;
+  height: 90px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.checkout-item-info {
+  flex: 1;
+}
+
+.checkout-item-info h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.checkout-item-info p {
+  margin: 3px 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.checkout-item-price {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.checkout-final-total {
+  margin-top: 5px;
+  padding-top: 18px;
+  border-top: 1px solid #222;
+  border-bottom: none;
+  font-size: 17px;
+}
+
+@media (max-width: 600px) {
+
+  .checkout-item {
+    align-items: flex-start;
+  }
+
+  .checkout-item-image {
+    width: 65px;
+    height: 80px;
+  }
+
+  .checkout-item-info h3 {
+    font-size: 14px;
+  }
+
+  .checkout-item-price {
+    font-size: 13px;
+  }
+
+}
+
+.payment-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.payment-section h2 {
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.payment-option input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.payment-note {
+  margin: 8px 0 0 26px;
+  color: #666;
+  font-size: 13px;
+}
+
+.checkout-policy-note {
+  margin-top: 25px;
+  padding: 18px;
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+}
+
+.checkout-policy-note strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.checkout-policy-note p {
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.checkout-policy-note a {
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.checkout-policy-note a:hover {
+  text-decoration: underline;
+}
+
+.checkout-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.checkout-summary-header h2 {
+  margin: 0;
+}
+
+.checkout-summary-header span {
+  color: #666;
+  font-size: 13px;
+}
